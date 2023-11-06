@@ -12,7 +12,7 @@ public class Main {
         List<Runnable> tasks = new LinkedList<>(Arrays.asList(
                 new MergingOfSortedLists(), new DeletionOfAllDuplicates(), new ObtainingUniqueListItem(),
                 new PrimeNumbersOutput(), new LuckyNumbersOutput(), new NumbersInWords(),
-                new ProofOfFermatsTheorem()
+                new ProofOfFermatsTheorem(), new ExpressionCalculation()
         ));
 
         for (Runnable task : tasks) {
