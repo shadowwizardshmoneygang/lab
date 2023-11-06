@@ -11,11 +11,11 @@ public class ExpressionCalculation implements Runnable {
         int number = input.nextInt();
 
         int sign = -1;
-        int statement = 0;
+        double statement = 0;
         for (int i = 0; i < 1_000; i++) {
             sign *= -1;
             statement += sign * (double) number / (i + 1);
         }
-        System.out.print("Result: " + statement);
+        System.out.println("Result: " + statement);
     }
 }
