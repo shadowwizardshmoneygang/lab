@@ -12,7 +12,8 @@ public class Main {
         List<Runnable> tasks = new LinkedList<>(Arrays.asList(
                 new MergingOfSortedLists(), new DeletionOfAllDuplicates(), new ObtainingUniqueListItem(),
                 new PrimeNumbersOutput(), new LuckyNumbersOutput(), new NumbersInWords(),
-                new ProofOfFermatsTheorem(), new ExpressionCalculation(), new FibonacciNumbersOutput()
+                new ProofOfFermatsTheorem(), new ExpressionCalculation(), new FibonacciNumbersOutput(),
+                new PalindromeNumbersOutput(), new FractionalPartOutput(), new ConstructingPascalsTriangle()
         ));
 
         for (Runnable task : tasks) {
