@@ -21,20 +21,9 @@ public class FibonacciNumbersOutput implements TaskRunnable {
             maximum = Math.max(maximum, number);
         }
 
-        List<Integer> fibonacciNumbers = new LinkedList<>();
-        fibonacciNumbers.add(0);
-        fibonacciNumbers.add(1);
-        for (int i = 2;; i++) {
-            int statement = fibonacciNumbers.get(i - 1) + fibonacciNumbers.get(i - 2);
-            if (statement > maximum) {
-                break;
-            }
-            fibonacciNumbers.add(statement);
-        }
-
         System.out.print("Fibonacci numbers: ");
         for (int number : numbers) {
-            if (fibonacciNumbers.contains(number)) {
+            if (FibonacciSequence.isFibonacciNumber(number)) {
                 System.out.print(number + " ");
             }
         }
