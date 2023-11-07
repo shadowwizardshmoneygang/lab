@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class PrimeNumbersOutput implements Runnable{
+public class PrimeNumbersOutput implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Prime numbers output");

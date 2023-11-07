@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ConstructingPascalsTriangle implements Runnable {
+public class ConstructingPascalsTriangle implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Constructing Pascal's triangle");

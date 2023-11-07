@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class MergingOfSortedLists implements Runnable {
+public class MergingOfSortedLists implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Merging of sorted lists");

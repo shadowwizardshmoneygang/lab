@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ProofOfFermatsTheorem implements Runnable {
+public class ProofOfFermatsTheorem implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Proof of Fermat's theorem");

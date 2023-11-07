@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
-public class DeletionOfAllDuplicates implements Runnable{
+public class DeletionOfAllDuplicates implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Deletion of all duplicates");

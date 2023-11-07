@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class PalindromeNumbersOutput implements Runnable {
+public class PalindromeNumbersOutput implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Palindrome numbers output");

@@ -1,6 +1,6 @@
 package ru.penzgtu.tasks;
 
 @FunctionalInterface
-public interface Runnable {
+public interface TaskRunnable {
     void run();
 }

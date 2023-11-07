@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class LuckyNumbersOutput implements Runnable{
+public class LuckyNumbersOutput implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Lucky numbers output");

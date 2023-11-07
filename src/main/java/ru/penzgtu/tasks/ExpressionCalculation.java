@@ -2,7 +2,7 @@ package ru.penzgtu.tasks;
 
 import java.util.Scanner;
 
-public class ExpressionCalculation implements Runnable {
+public class ExpressionCalculation implements TaskRunnable {
     public void run() {
         System.out.println("[?] Expression calculation");
         Scanner input = new Scanner(System.in);

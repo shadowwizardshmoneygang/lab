@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class FibonacciNumbersOutput implements Runnable {
+public class FibonacciNumbersOutput implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Fibonacci numbers output");

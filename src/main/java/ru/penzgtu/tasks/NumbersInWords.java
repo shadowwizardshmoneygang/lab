@@ -1,6 +1,6 @@
 package ru.penzgtu.tasks;
 
-public class NumbersInWords implements Runnable{
+public class NumbersInWords implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Numbers in words");
