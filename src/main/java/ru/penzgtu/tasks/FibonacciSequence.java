@@ -1,9 +1,13 @@
 package ru.penzgtu.tasks;
 
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class FibonacciSequence {
+    private static List<Integer> fibonacciSequence = new LinkedList<>(Arrays.asList(0, 1));
+    private static int lastEndNumber = 0;
+
     /**
      * Checking a number for belonging to Fibonacci sequence by approximating Binet's formula.
      *
@@ -32,10 +36,17 @@ public class FibonacciSequence {
      * @return a list of Fibonacci numbers.
      */
     public static List<Integer> generateFibonacciSequence(int end) {
-        return Stream.iterate(new int[]{0, 1}, numbers -> numbers[0] <= end,
-                numbers -> new int[]{numbers[1], numbers[0] + numbers[1]})
-                .map(numbers -> numbers[0])
-                .toList();
+        if (lastEndNumber >= end) {
+            return fibonacciSequence.stream().filter(number -> number <= end).toList();
+        }
+        lastEndNumber = end;
+        for (int i = fibonacciSequence.size();; i++) {
+            int statement = fibonacciSequence.get(i - 1) + fibonacciSequence.get(i - 2);
+            if (statement > end) {
+                return fibonacciSequence;
+            }
+            fibonacciSequence.add(statement);
+        }
     }
 
     /**
