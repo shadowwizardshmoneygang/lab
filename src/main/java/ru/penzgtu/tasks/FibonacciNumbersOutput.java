@@ -3,6 +3,7 @@ package ru.penzgtu.tasks;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class FibonacciNumbersOutput implements TaskRunnable {
     @Override
@@ -16,17 +17,12 @@ public class FibonacciNumbersOutput implements TaskRunnable {
             numbers.add(input.nextInt());
         }
 
-        int maximum = numbers.get(0);
-        for (int number : numbers) {
-            maximum = Math.max(maximum, number);
-        }
-
-        System.out.print("Fibonacci numbers: ");
-        for (int number : numbers) {
-            if (FibonacciSequence.isFibonacciNumber(number)) {
-                System.out.print(number + " ");
-            }
-        }
-        System.out.println();
+        // Trying to use lazy evaluation.
+        System.out.print(
+                numbers.stream()
+                        .filter(FibonacciSequence::isFibonacciNumber)
+                        .map(number -> Integer.toString(number))
+                        .collect(Collectors.joining(", ", "Fibonacci numbers: ", "."))
+        );
     }
 }

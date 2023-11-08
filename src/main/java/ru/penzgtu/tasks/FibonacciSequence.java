@@ -34,7 +34,7 @@ public class FibonacciSequence {
     public static List<Integer> generateFibonacciSequence(int end) {
         return Stream.iterate(new int[]{0, 1}, numbers -> numbers[0] <= end,
                 numbers -> new int[]{numbers[1], numbers[0] + numbers[1]})
-                .map(array -> array[0])
+                .map(numbers -> numbers[0])
                 .toList();
     }
 
