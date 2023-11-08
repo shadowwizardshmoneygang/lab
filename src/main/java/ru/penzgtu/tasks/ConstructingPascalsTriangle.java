@@ -1,20 +1,14 @@
 package ru.penzgtu.tasks;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class ConstructingPascalsTriangle implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Constructing Pascal's triangle");
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Enter the numbers of list with a space (x - end): ");
-        List<Integer> numbers = new LinkedList<>();
-        while (input.hasNextInt()) {
-            numbers.add(input.nextInt());
-        }
+        // If the number is greater than 14, the output breaks.
+        List<Integer> numbers = new ArrayList<>(List.of((int) (Math.random() * 10)));
 
         for (int number : numbers) {
             if (number < 0) continue;

@@ -21,6 +21,12 @@ public class ObtainingUniqueListItem implements TaskRunnable {
         System.out.println("Result: " + getUniqueListItem(list));
     }
 
+    /**
+     * Getting a unique item from the list.
+     *
+     * @param list list of numbers.
+     * @return unique element.
+     */
     private Integer getUniqueListItem(List<Integer> list) {
         for (int number : list) {
             if (list.indexOf(number) == list.lastIndexOf(number)) {

@@ -2,29 +2,17 @@ package ru.penzgtu.tasks;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class LuckyNumbersOutput implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Lucky numbers output");
-        Scanner input = new Scanner(System.in);
+        List<Integer> numbers = RandomNumber.generateList();
 
-        System.out.print("Enter the numbers of list with a space (x - end): ");
-        List<Integer> numbers = new LinkedList<>();
-        while (input.hasNextInt()) {
-            numbers.add(input.nextInt());
-        }
-
-        int maximum = numbers.get(0);
-        for (int number : numbers) {
-            maximum = Math.max(maximum, number);
-        }
-
-        List<Integer> luckyNumbers = new LinkedList<>();
-        for (int i = 0; i < maximum; i++) {
-            luckyNumbers.add(i + 1);
-        }
+        int maximum = numbers.stream().max(Integer::compare).get();
+        List<Integer> luckyNumbers = new LinkedList<>(IntStream.rangeClosed(1, maximum).boxed().toList());
 
         List<Integer> previousNumbers = new LinkedList<>(List.of(1));
         while (!previousNumbers.equals(luckyNumbers)) {
@@ -46,12 +34,11 @@ public class LuckyNumbersOutput implements TaskRunnable {
             }
         }
 
-        System.out.print("Lucky numbers: ");
-        for (int number : numbers) {
-            if (luckyNumbers.contains(number)) {
-                System.out.print(number + " ");
-            }
-        }
-        System.out.println();
+        System.out.print(
+                numbers.stream()
+                        .filter(luckyNumbers::contains)
+                        .map(number -> Integer.toString(number))
+                        .collect(Collectors.joining(", ", "Lucky numbers: ", ".\n"))
+        );
     }
 }

@@ -1,37 +1,40 @@
 package ru.penzgtu.tasks;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class ProofOfFermatsTheorem implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Proof of Fermat's theorem");
-        Scanner input = new Scanner(System.in);
-
         System.out.println("Solutions for the second power:");
         checkFermatsTheorem(2);
 
-        System.out.print("Enter the power: ");
-        int power = input.nextInt();
+        int power = RandomNumber.generateNumber();
+        System.out.println("Solutions for the " + power + " power:");
         System.out.println("Result:");
         checkFermatsTheorem(power);
     }
 
+    /**
+     * Checking Fermat's theorem.
+     *
+     * @param power verifiable power.
+     */
     private void checkFermatsTheorem(int power) {
-        List<Double> numbers = new ArrayList<>(100);
-        for (int i = 0; i < 100; i++) {
-            numbers.add(Math.pow(i + 1, power));
-        }
+        List<Integer> numbers = IntStream.rangeClosed(1, 100)
+                .map(number -> (int) Math.pow(number, power))
+                .boxed().toList();
 
         for (int i = 0; i < 100; i++) {
-            double a = numbers.get(i);
+            int a = numbers.get(i);
             for (int j = 0; j < 100; j++) {
-                double b = numbers.get(j);
-                double c = a + b;
+                int b = numbers.get(j);
+                int c = a + b;
                 if (numbers.contains(c)) {
-                    System.out.println(a + " + " + b + " = " + c);
+                    System.out.println(
+                            a + " + " + b + " = " + c
+                    );
                 }
             }
         }

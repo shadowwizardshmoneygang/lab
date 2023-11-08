@@ -1,14 +1,10 @@
 package ru.penzgtu.tasks;
 
-import java.util.Scanner;
-
 public class ExpressionCalculation implements TaskRunnable {
     public void run() {
         System.out.println("[?] Expression calculation");
-        Scanner input = new Scanner(System.in);
-
-        System.out.print("Enter the number: ");
-        int number = input.nextInt();
+        int number = RandomNumber.generateNumber();
+        System.out.println("Number: " + number);
 
         int sign = -1;
         double statement = 0;
