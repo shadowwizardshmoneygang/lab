@@ -1,7 +1,5 @@
 package ru.penzgtu.tasks;
 
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -9,16 +7,16 @@ public class MergingOfSortedLists implements TaskRunnable {
     @Override
     public void run() {
         System.out.println("[?] Merging of sorted lists");
-        List<Integer> list1 = new LinkedList<>(Arrays.asList(1, 2, 4));
-        List<Integer> list2 = new LinkedList<>(Arrays.asList(1, 3, 4));
+        List<Integer> list1 = List.of(1, 2, 4);
+        List<Integer> list2 = List.of(1, 3, 4);
         printLists(list1, list2);
 
-        list1 = new LinkedList<>();
-        list2 = new LinkedList<>();
+        list1 = List.of();
+        list2 = List.of();
         printLists(list1, list2);
 
-        list1 = new LinkedList<>();
-        list2 = new LinkedList<>(List.of(0));
+        list1 = List.of();
+        list2 = List.of(0);
         printLists(list1, list2);
     }
 
@@ -29,9 +27,9 @@ public class MergingOfSortedLists implements TaskRunnable {
      * @param second second list.
      */
     private void printLists(List<Integer> first, List<Integer> second) {
-        System.out.println("List 1: " + first);
-        System.out.println("List 2: " + second);
-        System.out.println("Result: " + mergeSortedList(first, second));
+        System.out.printf("List 1: %s. \n", first);
+        System.out.printf("List 2: %s. \n", second);
+        System.out.printf("Result: %s. \n", mergeSortedList(first, second));
     }
 
     /**

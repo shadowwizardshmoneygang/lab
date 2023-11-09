@@ -11,8 +11,7 @@ public class ProofOfFermatsTheorem implements TaskRunnable {
         checkFermatsTheorem(2);
 
         int power = RandomNumber.generateNumber();
-        System.out.println("Solutions for the " + power + " power:");
-        System.out.println("Result:");
+        System.out.printf("Solutions for the %s power:\n", power);
         checkFermatsTheorem(power);
     }
 
@@ -32,9 +31,7 @@ public class ProofOfFermatsTheorem implements TaskRunnable {
                 int b = numbers.get(j);
                 int c = a + b;
                 if (numbers.contains(c)) {
-                    System.out.println(
-                            a + " + " + b + " = " + c
-                    );
+                    System.out.println(a + " + " + b + " = " + c);
                 }
             }
         }

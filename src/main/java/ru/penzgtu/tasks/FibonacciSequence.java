@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FibonacciSequence {
-    private static List<Integer> fibonacciSequence = new LinkedList<>(Arrays.asList(0, 1));
+    private static final List<Integer> fibonacciSequence = new LinkedList<>(Arrays.asList(0, 1));
     private static int lastEndNumber = 0;
 
     /**

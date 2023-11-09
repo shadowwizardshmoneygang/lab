@@ -4,7 +4,7 @@ public class ExpressionCalculation implements TaskRunnable {
     public void run() {
         System.out.println("[?] Expression calculation");
         int number = RandomNumber.generateNumber();
-        System.out.println("Number: " + number);
+        System.out.printf("Number: %s. \n", number);
 
         int sign = -1;
         double statement = 0;
