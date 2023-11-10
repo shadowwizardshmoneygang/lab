@@ -31,7 +31,7 @@ public class ProofOfFermatsTheorem implements TaskRunnable {
                 int b = numbers.get(j);
                 int c = a + b;
                 if (numbers.contains(c)) {
-                    System.out.println(a + " + " + b + " = " + c);
+                    System.out.printf("%s + %s = %s. \n", a, b, c);
                 }
             }
         }
