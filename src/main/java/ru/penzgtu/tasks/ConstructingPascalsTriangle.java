@@ -1,8 +1,5 @@
 package ru.penzgtu.tasks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class ConstructingPascalsTriangle implements TaskRunnable {
     @Override
     public void run() {
